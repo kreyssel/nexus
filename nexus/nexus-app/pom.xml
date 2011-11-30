@@ -75,10 +75,6 @@
       <artifactId>xstream</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.sonatype.spice</groupId>
-      <artifactId>spice-timeline</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.sonatype.plexus</groupId>
       <artifactId>plexus-task-scheduler</artifactId>
     </dependency>
@@ -99,13 +95,6 @@
       <groupId>org.sonatype.spice</groupId>
       <artifactId>plexus-swizzle</artifactId>
     </dependency>
-    <!-- Swizzle needs it -->
-    <!-- cstamas: aside it has it in POM, i did not find any proof swizzle is actually using log4j!
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>log4j-over-slf4j</artifactId>
-    </dependency>
-    -->
     <dependency>
       <groupId>org.sonatype.spice</groupId>
       <artifactId>plexus-encryptor</artifactId>

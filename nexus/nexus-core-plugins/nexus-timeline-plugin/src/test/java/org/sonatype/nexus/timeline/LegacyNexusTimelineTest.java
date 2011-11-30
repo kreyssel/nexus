@@ -23,8 +23,6 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
-import org.sonatype.nexus.AbstractNexusTestCase;
-import org.sonatype.timeline.TimelineRecord;
 
 public class LegacyNexusTimelineTest
     extends AbstractTimelineTest
@@ -39,9 +37,9 @@ public class LegacyNexusTimelineTest
 
         FileUtils.copyDirectory( legacyDataDir, legacyTimelineDir );
 
-        NexusTimeline nexusTimeline = this.lookup( NexusTimeline.class );
+        NexusTimeline nexusTimeline = this.lookup( NexusTimeline.class, "real" );
 
-        List<TimelineRecord> result = asList( nexusTimeline.retrieve( 0, 10, null, null, null ) );
+        List<Entry> result = asList( nexusTimeline.retrieve( 0, 10, null, null, null ) );
 
         assertTrue( !result.isEmpty() );
     }
@@ -62,9 +60,9 @@ public class LegacyNexusTimelineTest
 
         FileUtils.copyDirectory( newDataDir, newTimelineDir );
 
-        NexusTimeline nexusTimeline = this.lookup( NexusTimeline.class );
+        NexusTimeline nexusTimeline = this.lookup( NexusTimeline.class, "real" );
 
-        List<TimelineRecord> result = asList( nexusTimeline.retrieve( 0, 10, null, null, null ) );
+        List<Entry> result = asList( nexusTimeline.retrieve( 0, 10, null, null, null ) );
 
         assertEquals( 4, result.size() );
     }
